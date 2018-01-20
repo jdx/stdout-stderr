@@ -1,4 +1,4 @@
-const {concurrent, series} = require('nps-utils')
+const {crossEnv, concurrent, series} = require('nps-utils')
 
 module.exports = {
   scripts: {
@@ -51,7 +51,7 @@ module.exports = {
           hiddenFromHelp: true,
         },
         test: {
-          script: 'MOCHA_FILE="reports/mocha.xml" nps "ci.mocha.nyc nps \\"test.mocha --reporter mocha-junit-reporter\\""',
+          script: crossEnv('MOCHA_FILE="reports/mocha.xml" nps "ci.mocha.nyc nps \\"test.mocha --reporter mocha-junit-reporter\\""'),
           hiddenFromHelp: true,
         },
         report: {
@@ -72,7 +72,14 @@ module.exports = {
         hiddenFromHelp: true,
       },
       release: {
-        script: 'dxcli-dev-semantic-release',
+        script: series(
+          'semantic-release -e @dxcli/dev-semantic-release',
+          'rm -rf /tmp/docs',
+          'typedoc --out /tmp/docs src/index.ts --excludeNotExported --mode file',
+          'git checkout gh-pages',
+          'rm -rf *',
+          'cp -r /tmp/docs/* .',
+        ),
         hiddenFromHelp: true,
       },
     },

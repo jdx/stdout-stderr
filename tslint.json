@@ -1,3 +1,8 @@
 {
-  "extends": "@dxcli/dev-tslint"
+  "extends": "@dxcli/dev-tslint",
+  "rules": {
+    "no-console": false,
+    "no-redundant-jsdoc": false,
+    "no-single-line-block-comment": false
+  }
 }

@@ -1,6 +1,6 @@
 import {expect} from 'chai'
 
-import {stdout, stderr} from '../../src'
+import {stderr, stdout} from '../../src'
 
 describe('stdout', () => {
   it('mocks', () => {
