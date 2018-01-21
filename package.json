@@ -1,7 +1,7 @@
 {
   "name": "stdout-stderr",
   "description": "mock stdout and stderr",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/jdxcode/stdout-stderr/issues",
   "dependencies": {

@@ -1,3 +1,11 @@
+<a name="0.1.4"></a>
+## [0.1.4](https://github.com/jdxcode/stdout-stderr/compare/8472761b77de47aed4edc7c48e4effe2b4c53717...v0.1.4) (2018-01-21)
+
+
+### Bug Fixes
+
+* tidying ([b68889b](https://github.com/jdxcode/stdout-stderr/commit/b68889b))
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/jdxcode/stdout-stderr/compare/e83f5705e8bad8246c261fea2e230e9e6b32286e...v0.1.3) (2018-01-21)
 
