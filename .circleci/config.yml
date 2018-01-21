@@ -28,6 +28,7 @@ jobs:
   release:
     <<: *test
     steps:
+      - add_ssh_keys
       - checkout
       - restore_cache: *restore_cache
       - run: ./.circleci/test
