@@ -13,9 +13,9 @@ const hidden = script => ({script, hiddenFromHelp: true})
 const unixOrWindows = (unix, windows) => series(ifNotWindows(unix), ifWindows(windows))
 
 let ciTests = [
-  'ci.eslint',
-  'ci.mocha',
-  'ci.tslint',
+  'ci.test.eslint',
+  'ci.test.mocha',
+  'ci.test.tslint',
 ]
 
 module.exports = {
@@ -35,38 +35,40 @@ module.exports = {
         default: script('mocha --forbid-only "test/**/*.test.ts"', 'run all mocha tests'),
         coverage: hidden(series.nps('test.mocha.nyc nps test.mocha')),
         junit: hidden(series(
-          mkdirp('reports'),
-          crossEnv('MOCHA_FILE="reports/mocha.xml" ') + series.nps('test.mocha.coverage --reporter mocha-junit-reporter'),
-          series.nps('ci.mocha.nyc report --reporter text-lcov > coverage.lcov'),
+          crossEnv('MOCHA_FILE="reports/mocha.xml" ') + series.nps('test.mocha.nyc nps \\"test.mocha --reporter mocha-junit-reporter\\"'),
+          series.nps('test.mocha.nyc report text-lcov > coverage.lcov'),
         )),
         nyc: hidden('nyc --nycrc-path node_modules/@dxcli/dev-nyc-config/.nycrc'),
       },
     },
     ci: {
       test: {
-        default: hidden(unixOrWindows(
-          series.nps(...ciTests),
-          concurrent.nps(...ciTests),
-        )),
-        eslint: hidden(
+        default: hidden(series(
+          mkdirp('reports'),
           unixOrWindows(
-            series.nps('lint.eslint --format junit --output-file reports/eslint.xml'),
-            series.nps('lint.eslint'),
-          )
-        ),
+            concurrent.nps(...ciTests),
+            series.nps(...ciTests),
+          ),
+        )),
         mocha: hidden(
           unixOrWindows(
             series.nps('test.mocha.junit'),
             series.nps('test.mocha'),
           )
         ),
+        eslint: hidden(
+          unixOrWindows(
+            series.nps('lint.eslint --format junit --output-file reports/eslint.xml'),
+            series.nps('lint.eslint'),
+          )
+        ),
+        tslint: hidden(
+          unixOrWindows(
+            series.nps('lint.tslint --format junit > reports/tslint.xml'),
+            series.nps('lint.tslint'),
+          )
+        ),
       },
-      tslint: hidden(
-        unixOrWindows(
-          series.nps('test.tslint --format junit > reports/tslint.xml'),
-          series.nps('test.tslint'),
-        )
-      ),
       release: {
         default: hidden(series.nps(...release)),
         'semantic-release': hidden('semantic-release -e @dxcli/dev-semantic-release'),
