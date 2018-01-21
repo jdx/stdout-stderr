@@ -1,8 +1,3 @@
-/**
- * foo
- * @module stdout-stderr
- */
-
 import stripAnsi = require('strip-ansi')
 
 export interface MockStd {
