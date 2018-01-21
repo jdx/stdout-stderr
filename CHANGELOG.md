@@ -1,3 +1,11 @@
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/jdxcode/stdout-stderr/compare/5735dc51897dceb3d90e1cb2a2cbefeeec46e4ff...v0.1.2) (2018-01-21)
+
+
+### Bug Fixes
+
+* add ssh keys ([e83f570](https://github.com/jdxcode/stdout-stderr/commit/e83f570))
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/jdxcode/stdout-stderr/compare/247b76ce4c8230172062577d31f08ad27a42c201...v0.1.1) (2018-01-21)
 
