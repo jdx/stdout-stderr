@@ -74,11 +74,11 @@ module.exports = {
       release: {
         script: series(
           'semantic-release -e @dxcli/dev-semantic-release',
-          'rm -rf /tmp/docs',
+          'git clone -b gh-pages git@github.com:jdxcode/stdout-stderr.git gh-pages',
           'typedoc --out /tmp/docs src/index.ts --excludeNotExported --mode file',
-          'git checkout gh-pages',
-          'rm -rf *',
-          'cp -r /tmp/docs/* .',
+          'rm -rf ./gh-pages/*',
+          'mv /tmp/docs/* ./gh-pages',
+          'cd gh-pages && git add . && git commit --allow-empty -m "updates from $CIRCLE_SHA1 [skip ci]" && git push',
         ),
         hiddenFromHelp: true,
       },
