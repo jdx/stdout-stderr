@@ -31,13 +31,21 @@ function mock(std: 'stdout' | 'stderr'): MockStd {
   const debug = require('debug')(std)
   const orig = process[std].write
   let writes: string[] = []
+  function _debug(msg: string | Buffer) {
+    if (!debug.enabled) return
+    // remap writer to allow it to send to debug
+    const prev = process[std].write
+    process[std].write = orig
+    debug(msg)
+    process[std].write = prev
+  }
   return {
     stripColor: true,
     print: false,
     start() {
       writes = []
       process[std].write = (data: string | Buffer) => {
-        debug(data)
+        _debug(data)
         writes.push(bufToString(data))
         if (this.print) orig.apply(process[std], data)
         return true
