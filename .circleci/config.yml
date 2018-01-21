@@ -12,7 +12,10 @@ jobs:
             - v0-yarn-{{ .Environment.CIRCLE_JOB }}-{{checksum ".circleci/test"}}-{{checksum ".circleci/config.yml"}}-{{ .Branch }}-{{checksum "yarn.lock"}}
             - v0-yarn-{{ .Environment.CIRCLE_JOB }}-{{checksum ".circleci/test"}}-{{checksum ".circleci/config.yml"}}-{{ .Branch }}-
             - v0-yarn-{{ .Environment.CIRCLE_JOB }}-{{checksum ".circleci/test"}}-{{checksum ".circleci/config.yml"}}-master-
+      - run: ./.circleci/setup_git
+      - run: ./.circleci/greenkeeper
       - run: ./.circleci/test
+      - run: yarn exec nps ci.circle.test
       - store_test_results:
           path: ~/cli/reports
       - save_cache: &save_cache
@@ -28,17 +31,16 @@ jobs:
   release:
     <<: *test
     steps:
-      - add_ssh_keys
       - checkout
       - restore_cache: *restore_cache
-      - run: ./.circleci/test
+      - run: ./.circleci/setup_git
       - run: yarn --frozen-lockfile
-      - run: ./node_modules/.bin/nps ci.release
+      - run: yarn exec nps ci.circle.release
       - save_cache: *save_cache
 
 workflows:
   version: 2
-  "stdout-stderr":
+  "test-plugin-typescript-semantic-release-mocha":
     jobs:
       - node-latest
       - node-8
