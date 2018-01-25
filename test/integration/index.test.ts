@@ -1,4 +1,5 @@
 import {expect} from 'chai'
+import chalk from 'chalk'
 
 import {stderr, stdout} from '../../src'
 
@@ -8,6 +9,22 @@ describe('stdout', () => {
     console.log('foo')
     stdout.stop()
     expect(stdout.output).to.equal('foo\n')
+  })
+
+  it('strips color by default', () => {
+    stdout.start()
+    console.log(chalk.red('foo'))
+    stdout.stop()
+    expect(stdout.output).to.equal('foo\n')
+  })
+
+  it('can disable stripColor', () => {
+    stdout.stripColor = false
+    stdout.start()
+    console.log(chalk.red('foo'))
+    stdout.stop()
+    expect(stdout.output).to.contain(chalk.red('foo'))
+    stdout.stripColor = true
   })
 })
 
