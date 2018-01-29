@@ -10,11 +10,10 @@
     "rootDirs": [
       "./src"
     ],
-    "sourceMap": true,
     "strict": true,
-    "target": "esnext"
+    "target": "es2017"
   },
   "include": [
-    "src/**/*"
+    "./src/**/*"
   ]
 }
