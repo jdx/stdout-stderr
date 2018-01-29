@@ -1,3 +1,11 @@
+<a name="0.1.5"></a>
+## [0.1.5](https://github.com/jdxcode/stdout-stderr/compare/b68889be9f471d905f67d913866e5a9bf7ab8407...v0.1.5) (2018-01-29)
+
+
+### Bug Fixes
+
+* ran generator ([6dee811](https://github.com/jdxcode/stdout-stderr/commit/6dee811))
+
 <a name="0.1.4"></a>
 ## [0.1.4](https://github.com/jdxcode/stdout-stderr/compare/8472761b77de47aed4edc7c48e4effe2b4c53717...v0.1.4) (2018-01-21)
 
