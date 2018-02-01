@@ -1,3 +1,11 @@
+<a name="0.1.6"></a>
+## [0.1.6](https://github.com/jdxcode/stdout-stderr/compare/4752703dfc589ac600fe838a99890ddeb86f4db5...v0.1.6) (2018-02-01)
+
+
+### Bug Fixes
+
+* fixed printing ([54f06b2](https://github.com/jdxcode/stdout-stderr/commit/54f06b2))
+
 <a name="0.1.5"></a>
 ## [0.1.5](https://github.com/jdxcode/stdout-stderr/compare/b68889be9f471d905f67d913866e5a9bf7ab8407...v0.1.5) (2018-01-29)
 
