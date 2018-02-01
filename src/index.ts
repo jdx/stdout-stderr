@@ -39,10 +39,10 @@ function mock(std: 'stdout' | 'stderr'): MockStd {
     print: false,
     start() {
       writes = []
-      process[std].write = (data: string | Buffer) => {
+      process[std].write = (data: string | Buffer, ...args: any[]) => {
         _debug(data)
         writes.push(bufToString(data))
-        if (this.print) orig.apply(process[std], data)
+        if (this.print) orig.apply(process[std], [data, ...args])
         return true
       }
     },
