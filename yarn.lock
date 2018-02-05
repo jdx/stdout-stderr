@@ -2,11 +2,11 @@
 # yarn lockfile v1
 
 
-"@commitlint/cli@^6.0.5":
-  version "6.0.5"
-  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-6.0.5.tgz#c159c41434d24167c2f52c29e81cffc1959a6d0f"
+"@commitlint/cli@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-6.1.0.tgz#0a545088b4e0268cca1dca7e8ccd95bd55847b88"
   dependencies:
-    "@commitlint/core" "^6.0.5"
+    "@commitlint/core" "^6.1.0"
     babel-polyfill "6.26.0"
     chalk "2.3.0"
     get-stdin "5.0.1"
@@ -14,20 +14,20 @@
     lodash.pick "4.4.0"
     meow "3.7.0"
 
-"@commitlint/config-conventional@^6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-6.0.4.tgz#f5332c3aaf5423f2fa62287849859a9b769484f3"
+"@commitlint/config-conventional@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-6.1.0.tgz#1f1c1577f1ca10f112e4346d9c94af1f8936f0c5"
 
-"@commitlint/core@^6.0.5":
-  version "6.0.5"
-  resolved "https://registry.yarnpkg.com/@commitlint/core/-/core-6.0.5.tgz#a0f174f08a377eb9e5571bf31c2c9f60964a6ed9"
+"@commitlint/core@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/core/-/core-6.1.0.tgz#41b2482044039435cb9673995598717038f2f6d0"
   dependencies:
-    "@commitlint/execute-rule" "^6.0.4"
-    "@commitlint/is-ignored" "^6.0.4"
-    "@commitlint/parse" "^6.0.4"
-    "@commitlint/resolve-extends" "^6.0.4"
-    "@commitlint/rules" "^6.0.4"
-    "@commitlint/top-level" "^6.0.5"
+    "@commitlint/execute-rule" "^6.1.0"
+    "@commitlint/is-ignored" "^6.1.0"
+    "@commitlint/parse" "^6.1.0"
+    "@commitlint/resolve-extends" "^6.1.0"
+    "@commitlint/rules" "^6.1.0"
+    "@commitlint/top-level" "^6.1.0"
     "@marionebl/sander" "^0.6.0"
     babel-runtime "^6.23.0"
     chalk "^2.0.1"
@@ -39,9 +39,9 @@
     lodash.topairs "4.3.0"
     resolve-from "4.0.0"
 
-"@commitlint/ensure@^6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@commitlint/ensure/-/ensure-6.0.4.tgz#c5ae6d0a24797e58caceee61608c6ac9ced64691"
+"@commitlint/ensure@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/ensure/-/ensure-6.1.0.tgz#567f029d816b6b5ca16bf62499230324c99a8fa9"
   dependencies:
     lodash.camelcase "4.3.0"
     lodash.kebabcase "4.1.1"
@@ -49,32 +49,32 @@
     lodash.startcase "4.4.0"
     lodash.upperfirst "4.3.1"
 
-"@commitlint/execute-rule@^6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@commitlint/execute-rule/-/execute-rule-6.0.4.tgz#5db080be51b2cc057028ce24a1cd9142283774fc"
+"@commitlint/execute-rule@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/execute-rule/-/execute-rule-6.1.0.tgz#4f56e5855a5e25ebcbc985d2209ea29f1bb89774"
   dependencies:
     babel-runtime "6.26.0"
 
-"@commitlint/is-ignored@^6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@commitlint/is-ignored/-/is-ignored-6.0.4.tgz#cc4cde7be8d101e848fa70b37381687fa837c417"
+"@commitlint/is-ignored@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/is-ignored/-/is-ignored-6.1.0.tgz#0b86f8b37dfc693d6d66760b36fee1aba50882d8"
   dependencies:
     semver "5.5.0"
 
-"@commitlint/message@^6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@commitlint/message/-/message-6.0.4.tgz#80fe320285cab5f0f4ab3847e8d3b98a3fd1e389"
+"@commitlint/message@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/message/-/message-6.1.0.tgz#ee4ca775ad876ba59d23d02ba386c9b9038969e3"
 
-"@commitlint/parse@^6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@commitlint/parse/-/parse-6.0.4.tgz#3d7403b024200d32d66e913ee464eaf46bbac075"
+"@commitlint/parse@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/parse/-/parse-6.1.0.tgz#e4ba58ab632371078b9b9609ae7af03c2e7b3a3e"
   dependencies:
     conventional-changelog-angular "^1.3.3"
     conventional-commits-parser "^2.1.0"
 
-"@commitlint/resolve-extends@^6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@commitlint/resolve-extends/-/resolve-extends-6.0.4.tgz#8cce624e856df7582d5621c882e83f69b44c18c4"
+"@commitlint/resolve-extends@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/resolve-extends/-/resolve-extends-6.1.0.tgz#b3d92f69e3746e94de0023f8be3b1f605a20839a"
   dependencies:
     babel-runtime "6.26.0"
     lodash.merge "4.6.0"
@@ -83,22 +83,22 @@
     resolve-from "^4.0.0"
     resolve-global "^0.1.0"
 
-"@commitlint/rules@^6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@commitlint/rules/-/rules-6.0.4.tgz#6891d7e37908d6438dc3b382f193774ab4a36479"
+"@commitlint/rules@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/rules/-/rules-6.1.0.tgz#564b69503a3a4d09d03a9a077731c9655ee8f4df"
   dependencies:
-    "@commitlint/ensure" "^6.0.4"
-    "@commitlint/message" "^6.0.4"
-    "@commitlint/to-lines" "^6.0.4"
+    "@commitlint/ensure" "^6.1.0"
+    "@commitlint/message" "^6.1.0"
+    "@commitlint/to-lines" "^6.1.0"
     babel-runtime "^6.23.0"
 
-"@commitlint/to-lines@^6.0.4":
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/@commitlint/to-lines/-/to-lines-6.0.4.tgz#c0bb6ca0b5c5f565f18d9747de12067cb2c4cc34"
+"@commitlint/to-lines@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/to-lines/-/to-lines-6.1.0.tgz#9e130254c980dbd456e1693df1082a77ba7114a0"
 
-"@commitlint/top-level@^6.0.5":
-  version "6.0.5"
-  resolved "https://registry.yarnpkg.com/@commitlint/top-level/-/top-level-6.0.5.tgz#01cac031f7452c0bebfda75d6ef7fb79d1714f81"
+"@commitlint/top-level@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/top-level/-/top-level-6.1.0.tgz#b420c1e9166df3afa000186a42b7f49cae4014cc"
   dependencies:
     find-up "^2.1.0"
 
@@ -121,35 +121,47 @@
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.1.2.tgz#f1af664769cfb50af805431c407425ed619daa21"
 
-"@types/fs-extra@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-4.0.0.tgz#1dd742ad5c9bce308f7a52d02ebc01421bc9102f"
+"@types/events@*":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@types/events/-/events-1.1.0.tgz#93b1be91f63c184450385272c47b6496fd028e02"
+
+"@types/fs-extra@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-5.0.0.tgz#d3e225b35eb5c6d3a5a782c28219df365c781413"
   dependencies:
     "@types/node" "*"
 
-"@types/handlebars@4.0.31":
-  version "4.0.31"
-  resolved "https://registry.yarnpkg.com/@types/handlebars/-/handlebars-4.0.31.tgz#a7fba66fafe42713aee88eeca8db91192efe6e72"
+"@types/glob@*":
+  version "5.0.35"
+  resolved "https://registry.yarnpkg.com/@types/glob/-/glob-5.0.35.tgz#1ae151c802cece940443b5ac246925c85189f32a"
+  dependencies:
+    "@types/events" "*"
+    "@types/minimatch" "*"
+    "@types/node" "*"
 
-"@types/highlight.js@9.1.8":
-  version "9.1.8"
-  resolved "https://registry.yarnpkg.com/@types/highlight.js/-/highlight.js-9.1.8.tgz#d227f18bcb8f3f187e16965f2444859a04689758"
+"@types/handlebars@4.0.36":
+  version "4.0.36"
+  resolved "https://registry.yarnpkg.com/@types/handlebars/-/handlebars-4.0.36.tgz#ff57c77fa1ab6713bb446534ddc4d979707a3a79"
 
-"@types/lodash@4.14.74":
-  version "4.14.74"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.74.tgz#ac3bd8db988e7f7038e5d22bd76a7ba13f876168"
+"@types/highlight.js@9.12.2":
+  version "9.12.2"
+  resolved "https://registry.yarnpkg.com/@types/highlight.js/-/highlight.js-9.12.2.tgz#6ee7cd395effe5ec80b515d3ff1699068cd0cd1d"
 
-"@types/lodash@^4.14.99":
+"@types/lodash@4.14.99":
   version "4.14.99"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.99.tgz#e6e10c0a4cc16c7409b3181f1e66880d2fb7d4dc"
+
+"@types/lodash@^4.14.100":
+  version "4.14.100"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.100.tgz#f353dd9d3a9785638b6cb8023e6639097bd31969"
 
 "@types/marked@0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@types/marked/-/marked-0.3.0.tgz#583c223dd33385a1dda01aaf77b0cd0411c4b524"
 
-"@types/minimatch@2.0.29":
-  version "2.0.29"
-  resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-2.0.29.tgz#5002e14f75e2d71e564281df0431c8c1b4a2a36a"
+"@types/minimatch@*", "@types/minimatch@3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
 
 "@types/mocha@^2.2.48":
   version "2.2.48"
@@ -185,10 +197,11 @@
   dependencies:
     "@types/normalize-package-data" "*"
 
-"@types/shelljs@0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@types/shelljs/-/shelljs-0.7.0.tgz#229c157c6bc1e67d6b990e6c5e18dbd2ff58cff0"
+"@types/shelljs@0.7.7":
+  version "0.7.7"
+  resolved "https://registry.yarnpkg.com/@types/shelljs/-/shelljs-0.7.7.tgz#1f7bfa28947661afea06365db9b1135bbc903ec4"
   dependencies:
+    "@types/glob" "*"
     "@types/node" "*"
 
 "@types/strip-ansi@^3.0.0":
@@ -657,7 +670,7 @@ date-fns@^1.23.0:
   version "1.29.0"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.29.0.tgz#12e609cdcb935127311d04d33334e2960a2a54e6"
 
-debug@*, debug@3.1.0, debug@^3.1.0:
+debug@3.1.0, debug@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   dependencies:
@@ -793,9 +806,9 @@ eslint-visitor-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
 
-eslint@^4.16.0:
-  version "4.16.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.16.0.tgz#934ada9e98715e1d7bbfd6f6f0519ed2fab35cc1"
+eslint@^4.17.0:
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.17.0.tgz#dc24bb51ede48df629be7031c71d9dc0ee4f3ddf"
   dependencies:
     ajv "^5.3.0"
     babel-code-frame "^6.22.0"
@@ -958,9 +971,9 @@ from@~0:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/from/-/from-0.1.7.tgz#83c60afc58b9c56997007ed1a768b3ab303a44fe"
 
-fs-extra@^4.0.0:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.3.tgz#0d852122e5bc5beb453fb028e9c0c9bf36340c94"
+fs-extra@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-5.0.0.tgz#414d0110cdd06705734d055652c5411260c31abd"
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^4.0.0"
@@ -1472,7 +1485,7 @@ map-stream@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/map-stream/-/map-stream-0.1.0.tgz#e56aa94c4c8055a16404a0674b78f215f7c8e194"
 
-marked@^0.3.5:
+marked@^0.3.12:
   version "0.3.12"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.12.tgz#7cf25ff2252632f3fe2406bde258e94eee927519"
 
@@ -2017,9 +2030,9 @@ shebang-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-1.0.0.tgz#da42f49740c0b42db2ca9728571cb190c98efea3"
 
-shelljs@^0.7.0:
-  version "0.7.8"
-  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.8.tgz#decbcf874b0d1e5fb72e14b164a9683048e9acb3"
+shelljs@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.1.tgz#729e038c413a2254c4078b95ed46e0397154a9f1"
   dependencies:
     glob "^7.0.0"
     interpret "^1.0.0"
@@ -2360,33 +2373,29 @@ typedoc-default-themes@^0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/typedoc-default-themes/-/typedoc-default-themes-0.5.0.tgz#6dc2433e78ed8bea8e887a3acde2f31785bd6227"
 
-typedoc@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.9.0.tgz#159bff7c7784ce5b91d86f3e4cc8928e62040957"
+typedoc@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.10.0.tgz#898b447248dabf68ecbde9d5ccf5141fda8aa166"
   dependencies:
-    "@types/fs-extra" "4.0.0"
-    "@types/handlebars" "4.0.31"
-    "@types/highlight.js" "9.1.8"
-    "@types/lodash" "4.14.74"
+    "@types/fs-extra" "5.0.0"
+    "@types/handlebars" "4.0.36"
+    "@types/highlight.js" "9.12.2"
+    "@types/lodash" "4.14.99"
     "@types/marked" "0.3.0"
-    "@types/minimatch" "2.0.29"
-    "@types/shelljs" "0.7.0"
-    fs-extra "^4.0.0"
+    "@types/minimatch" "3.0.3"
+    "@types/shelljs" "0.7.7"
+    fs-extra "^5.0.0"
     handlebars "^4.0.6"
     highlight.js "^9.0.0"
     lodash "^4.13.1"
-    marked "^0.3.5"
+    marked "^0.3.12"
     minimatch "^3.0.0"
     progress "^2.0.0"
-    shelljs "^0.7.0"
+    shelljs "^0.8.1"
     typedoc-default-themes "^0.5.0"
-    typescript "2.4.1"
+    typescript "2.7.1"
 
-typescript@2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.4.1.tgz#c3ccb16ddaa0b2314de031e7e6fee89e5ba346bc"
-
-typescript@^2.7.1:
+typescript@2.7.1, typescript@^2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.1.tgz#bb3682c2c791ac90e7c6210b26478a8da085c359"
 

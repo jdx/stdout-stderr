@@ -23,11 +23,12 @@ export interface MockStd {
 
 /** mocks stdout or stderr */
 function mock(std: 'stdout' | 'stderr'): MockStd {
-  const debug = require('debug')(std)
+  let debug: any
+  try { debug = require('debug')(std) } catch {}
   const orig = process[std].write
   let writes: string[] = []
   function _debug(msg: string | Buffer) {
-    if (!debug.enabled) return
+    if (debug && !debug.enabled) return
     // remap writer to allow it to send to debug
     const prev = process[std].write
     process[std].write = orig
