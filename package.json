@@ -29,7 +29,7 @@
     "mocha-junit-reporter": "^1.17.0",
     "nps": "^5.7.1",
     "nps-utils": "^1.5.0",
-    "ts-node": "^4.1.0",
+    "ts-node": "^5.0.0",
     "typedoc": "^0.10.0",
     "typescript": "^2.7.1"
   },
