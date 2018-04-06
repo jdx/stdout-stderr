@@ -1,5 +1,7 @@
 import stripAnsi = require('strip-ansi')
 
+const debug = require('debug')('stdout-stderr')
+
 export interface MockStd {
   /**
    * strip color with ansi-strip
@@ -23,25 +25,15 @@ export interface MockStd {
 
 /** mocks stdout or stderr */
 function mock(std: 'stdout' | 'stderr'): MockStd {
-  let debug: any
-  try { debug = require('debug')(std) } catch {}
   const orig = process[std].write
   let writes: string[] = []
-  function _debug(msg: string | Buffer) {
-    if (debug && !debug.enabled) return
-    // remap writer to allow it to send to debug
-    const prev = process[std].write
-    process[std].write = orig
-    debug(msg)
-    process[std].write = prev
-  }
   return {
     stripColor: true,
     print: false,
     start() {
+      debug('start', std)
       writes = []
       process[std].write = (data: string | Buffer, ...args: any[]) => {
-        _debug(data)
         writes.push(bufToString(data))
         if (this.print) orig.apply(process[std], [data, ...args])
         return true
@@ -49,6 +41,7 @@ function mock(std: 'stdout' | 'stderr'): MockStd {
     },
     stop() {
       process[std].write = orig
+      debug('stop', std)
     },
     get output() {
       let o = this.stripColor ? writes.map(stripAnsi) : writes

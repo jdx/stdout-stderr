@@ -36,13 +36,3 @@ describe('stderr', () => {
     expect(stderr.output).to.equal('foo\n')
   })
 })
-
-describe('debug', () => {
-  it('does not fail', () => {
-    process.env.DEBUG = '*'
-    stderr.start()
-    console.error('foo')
-    stderr.stop()
-    expect(stderr.output).to.equal('foo\n')
-  })
-})

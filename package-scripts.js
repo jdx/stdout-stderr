@@ -1,5 +1,3 @@
-/* eslint-disable unicorn/filename-case */
-
 const {
   setColors,
   concurrent,
@@ -13,8 +11,6 @@ setColors(['dim'])
 const script = (script, description) => description ? {script, description} : {script}
 
 const linters = {
-  eslint: script('eslint .', 'lint js files'),
-  commitlint: script('commitlint --from origin/master', 'ensure that commits are in valid conventional-changelog format'),
   tsc: script('tsc -p test --noEmit', 'syntax check with tsc'),
   tslint: script('tslint -p test', 'lint ts files'),
 }
@@ -24,8 +20,6 @@ if (process.env.CI) {
   if (process.env.CIRCLECI) {
     // add mocha junit reporter
     mocha = crossEnv(`MOCHA_FILE=reports/mocha.xml ${mocha} --reporter mocha-junit-reporter`)
-    // add eslint reporter
-    linters.eslint.script = `${linters.eslint.script} --format junit --output-file reports/eslint.xml`
     // add tslint reporter
     linters.tslint.script = `${linters.tslint.script} --format junit > reports/tslint.xml`
   }
