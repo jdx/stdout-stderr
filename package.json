@@ -5,7 +5,7 @@
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/jdxcode/stdout-stderr/issues",
   "dependencies": {
-    "debug": "^3.1.0",
+    "debug": "^3.2.2",
     "strip-ansi": "^4.0.0"
   },
   "devDependencies": {
