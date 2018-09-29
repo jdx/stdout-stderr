@@ -6,7 +6,7 @@
   "bugs": "https://github.com/jdxcode/stdout-stderr/issues",
   "dependencies": {
     "debug": "^3.1.0",
-    "strip-ansi": "^4.0.0"
+    "strip-ansi": "^5.0.0"
   },
   "devDependencies": {
     "@oclif/tslint": "^1.1.0",
