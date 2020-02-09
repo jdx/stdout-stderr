@@ -4,8 +4,6 @@ stdout-stderr
 mock stdout and stderr
 
 [![Version](https://img.shields.io/npm/v/stdout-stderr.svg)](https://npmjs.org/package/stdout-stderr)
-[![CircleCI](https://circleci.com/gh/jdxcode/stdout-stderr/tree/master.svg?style=svg)](https://circleci.com/gh/jdxcode/stdout-stderr/tree/master)
-[![Appveyor CI](https://ci.appveyor.com/api/projects/status/github/jdxcode/stdout-stderr?branch=master&svg=true)](https://ci.appveyor.com/project/heroku/stdout-stderr/branch/master)
 [![Known Vulnerabilities](https://snyk.io/test/npm/stdout-stderr/badge.svg)](https://snyk.io/test/npm/stdout-stderr)
 [![Downloads/week](https://img.shields.io/npm/dw/stdout-stderr.svg)](https://npmjs.org/package/stdout-stderr)
 [![License](https://img.shields.io/npm/l/stdout-stderr.svg)](https://github.com/jdxcode/stdout-stderr/blob/master/package.json)
