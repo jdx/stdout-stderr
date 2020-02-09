@@ -36,6 +36,8 @@ export interface MockStd {
   stop(): void
 }
 
+const originalConsoleLog = console.log;
+
 /** mocks stdout or stderr */
 function mock(std: 'stdout' | 'stderr'): MockStd {
   let writes: string[] = [];
@@ -50,9 +52,15 @@ function mock(std: 'stdout' | 'stderr'): MockStd {
         if (this.print) g['stdout-stderr'][std].apply(process[std], [data, ...args]);
         return true;
       };
+      if (std === 'stdout') {
+        console.log = (...args: any[]) => {
+          process.stdout.write(`${args.join(' ')}\n`);
+        };
+      }
     },
     stop() {
       process[std].write = g['stdout-stderr'][std];
+      if (std === 'stdout') console.log = originalConsoleLog;
       debug('stop', std);
     },
     get output() {
