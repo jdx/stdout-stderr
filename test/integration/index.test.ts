@@ -26,6 +26,15 @@ describe('stdout', () => {
     expect(stdout.output).to.contain(chalk.red('foo'));
     stdout.stripColor = true;
   });
+
+  it('calls the callback', () => {
+    let called = false;
+    const mock = () => { called = true; };
+    stdout.start();
+    process.stdout.write(chalk.red('foo'), () => mock());
+    stdout.stop();
+    expect(called).to.equal(true);
+  });
 });
 
 describe('stderr', () => {

@@ -49,7 +49,12 @@ function mock(std: 'stdout' | 'stderr'): MockStd {
       writes = [];
       process[std].write = (data: string | Buffer, ...args: any[]) => {
         writes.push(bufToString(data));
-        if (this.print) g['stdout-stderr'][std].apply(process[std], [data, ...args]);
+        if (this.print) {
+          g['stdout-stderr'][std].apply(process[std], [data, ...args]);
+        } else {
+          const callback = args[0];
+          if (callback) callback();
+        }
         return true;
       };
       if (std === 'stdout') {
