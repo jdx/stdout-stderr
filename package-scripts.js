@@ -12,7 +12,7 @@ const script = (script, description) => description ? {script, description} : {s
 
 const linters = {
   tsc: script('tsc -p test --noEmit', 'syntax check with tsc'),
-  tslint: script('tslint -p test', 'lint ts files'),
+  eslint: script('eslint --ext ts src test', 'lint ts files'),
 }
 
 let mocha = 'mocha --forbid-only "test/**/*.test.ts"'
@@ -20,8 +20,6 @@ if (process.env.CI) {
   if (process.env.CIRCLECI) {
     // add mocha junit reporter
     mocha = crossEnv(`MOCHA_FILE=reports/mocha.xml ${mocha} --reporter mocha-junit-reporter`)
-    // add tslint reporter
-    linters.tslint.script = `${linters.tslint.script} --format junit > reports/tslint.xml`
   }
   // add code coverage reporting with nyc
   const nyc = 'nyc --nycrc-path node_modules/@dxcli/nyc-config/.nycrc'

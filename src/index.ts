@@ -1,13 +1,18 @@
 import stripAnsi = require('strip-ansi')
 
-const debug = require('debug')('stdout-stderr')
+const debug = require('debug')('stdout-stderr');
 
-const g: any = global
+const g: any = global;
 if (!g['stdout-stderr']) {
   g['stdout-stderr'] = {
     stdout: process.stdout.write,
     stderr: process.stderr.write,
-  }
+  };
+}
+
+function bufToString(b: string | Buffer): string {
+  if (typeof b === 'string') return b;
+  return b.toString('utf8');
 }
 
 export interface MockStd {
@@ -33,34 +38,29 @@ export interface MockStd {
 
 /** mocks stdout or stderr */
 function mock(std: 'stdout' | 'stderr'): MockStd {
-  let writes: string[] = []
+  let writes: string[] = [];
   return {
     stripColor: true,
     print: false,
     start() {
-      debug('start', std)
-      writes = []
+      debug('start', std);
+      writes = [];
       process[std].write = (data: string | Buffer, ...args: any[]) => {
-        writes.push(bufToString(data))
-        if (this.print) g['stdout-stderr'][std].apply(process[std], [data, ...args])
-        return true
-      }
+        writes.push(bufToString(data));
+        if (this.print) g['stdout-stderr'][std].apply(process[std], [data, ...args]);
+        return true;
+      };
     },
     stop() {
-      process[std].write = g['stdout-stderr'][std]
-      debug('stop', std)
+      process[std].write = g['stdout-stderr'][std];
+      debug('stop', std);
     },
     get output() {
-      let o = this.stripColor ? writes.map(stripAnsi) : writes
-      return o.join('')
+      const o = this.stripColor ? writes.map(stripAnsi) : writes;
+      return o.join('');
     },
-  }
+  };
 }
 
-export const stdout = mock('stdout')
-export const stderr = mock('stderr')
-
-function bufToString(b: string | Buffer): string {
-  if (typeof b === 'string') return b
-  return b.toString('utf8')
-}
+export const stdout = mock('stdout');
+export const stderr = mock('stderr');

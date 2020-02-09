@@ -1,38 +1,38 @@
-import {expect} from 'chai'
-import chalk from 'chalk'
+import { expect } from 'chai';
+import * as chalk from 'chalk';
 
-import {stderr, stdout} from '../../src'
+import { stderr, stdout } from '../../src/index';
 
 describe('stdout', () => {
   it('mocks', () => {
-    stdout.start()
-    console.log('foo')
-    stdout.stop()
-    expect(stdout.output).to.equal('foo\n')
-  })
+    stdout.start();
+    console.log('foo');
+    stdout.stop();
+    expect(stdout.output).to.equal('foo\n');
+  });
 
   it('strips color by default', () => {
-    stdout.start()
-    console.log(chalk.red('foo'))
-    stdout.stop()
-    expect(stdout.output).to.equal('foo\n')
-  })
+    stdout.start();
+    console.log(chalk.red('foo'));
+    stdout.stop();
+    expect(stdout.output).to.equal('foo\n');
+  });
 
   it('can disable stripColor', () => {
-    stdout.stripColor = false
-    stdout.start()
-    console.log(chalk.red('foo'))
-    stdout.stop()
-    expect(stdout.output).to.contain(chalk.red('foo'))
-    stdout.stripColor = true
-  })
-})
+    stdout.stripColor = false;
+    stdout.start();
+    console.log(chalk.red('foo'));
+    stdout.stop();
+    expect(stdout.output).to.contain(chalk.red('foo'));
+    stdout.stripColor = true;
+  });
+});
 
 describe('stderr', () => {
   it('mocks', () => {
-    stderr.start()
-    console.error('foo')
-    stderr.stop()
-    expect(stderr.output).to.equal('foo\n')
-  })
-})
+    stderr.start();
+    console.error('foo');
+    stderr.stop();
+    expect(stderr.output).to.equal('foo\n');
+  });
+});
