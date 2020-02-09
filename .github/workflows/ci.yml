@@ -31,10 +31,4 @@ jobs:
       env:
         CI: true
     - run: yarn lint
-    - run: |
-        yarn link
-        cd example
-        yarn
-        yarn link oclip
-        npx ts-node example.ts serve 20000
 
