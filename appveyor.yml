@@ -1,5 +1,5 @@
 environment:
-  nodejs_version: "9"
+  nodejs_version: "12"
 cache:
   - '%LOCALAPPDATA%\Yarn -> appveyor.yml'
   - node_modules -> yarn.lock
@@ -8,16 +8,7 @@ install:
   - ps: Install-Product node $env:nodejs_version x64
   - git submodule sync
   - git submodule update --init --recursive
-  - git config --global user.email "dxcli@example.com"
-  - git config --global user.name "dxcli"
-  - yarn add -D nyc @dxcli/nyc-config
 test_script:
   - yarn test
-after_test:
-  - ps: |
-      $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
-      Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
-      bash codecov.sh
-
 build: off
 

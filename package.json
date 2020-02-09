@@ -42,8 +42,10 @@
   "main": "lib/index.js",
   "repository": "jdxcode/stdout-stderr",
   "scripts": {
-    "prepublishOnly": "nps build",
-    "test": "nps test -l warn"
+    "prepublishOnly": "rm -rf lib && npm run prepare",
+    "prepare": "tsc -b",
+    "lint": "eslint --ext ts src test",
+    "test": "mocha --forbid-only test/**/*.ts"
   },
   "types": "lib/index.d.ts"
 }
