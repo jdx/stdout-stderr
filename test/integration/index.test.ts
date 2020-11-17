@@ -35,6 +35,17 @@ describe('stdout', () => {
     stdout.stop();
     expect(called).to.equal(true);
   });
+
+  it('detects the callback argument correctly', () => {
+    let called = false;
+    const mock = () => { called = true; };
+
+    stdout.start();
+    process.stdout.write('data', 'utf-8', () => mock());
+    stdout.stop();
+
+    expect(called).to.equal(true);
+  });
 });
 
 describe('stderr', () => {
