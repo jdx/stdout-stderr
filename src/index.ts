@@ -51,9 +51,11 @@ function mock(std: 'stdout' | 'stderr'): MockStd {
         writes.push(bufToString(data));
         if (this.print) {
           g['stdout-stderr'][std].apply(process[std], [data, ...args]);
-        } else {
-          const callback = args[0];
-          if (callback) callback();
+        } else if (args.length > 0) {
+          const callback = args[args.length - 1];
+          if (typeof callback === 'function') {
+            callback();
+          }
         }
         return true;
       };
